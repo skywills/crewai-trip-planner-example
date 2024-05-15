@@ -1,0 +1,19 @@
+city_selection:
+  description: >
+    Analyze and select the best city for the trip based 
+    on specific criteria such as weather patterns, seasonal
+    events, and travel costs. This task involves comparing
+    multiple cities, considering factors like current weather
+    conditions, upcoming cultural or seasonal events, and
+    overall travel expenses. 
+    
+    Your final answer must be a detailed
+    report on the chosen city, and everything you found out
+    about it, including the actual flight costs, weather 
+    forecast and attractions.
+    If you do your BEST WORK, I'll tip you $100!
+
+    Traveling from: {origin}
+    City Options: {cities}
+    Trip Date: {range}
+    Traveler Interests: {interests}    

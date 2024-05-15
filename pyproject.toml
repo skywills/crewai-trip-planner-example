@@ -9,6 +9,8 @@ packages = [{include = "crewai_test"}]
 [tool.poetry.dependencies]
 python = ">=3.10,<=3.13"
 crewai = {extras = ["tools"], version = "^0.30.11"}
+langchain = "^0.1.20"
+unstructured = "0.10.25"
 
 
 [build-system]
