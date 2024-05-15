@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "crewai-test"
+version = "0.1.0"
+description = ""
+authors = ["williamkhoo <william_khoo@outlook.com>"]
+readme = "README.md"
+packages = [{include = "crewai_test"}]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<=3.13"
+crewai = {extras = ["tools"], version = "^0.30.11"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
