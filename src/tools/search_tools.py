@@ -1,4 +1,4 @@
-from langchain.tools import DuckDuckGoSearchRun,tool
+from langchain_community.tools import DuckDuckGoSearchRun,tool
 
 search_tool = DuckDuckGoSearchRun()
 

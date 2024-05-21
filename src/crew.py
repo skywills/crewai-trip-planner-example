@@ -9,8 +9,8 @@ import os
 os.environ["OPENAI_API_KEY"] = "NA"
 
 llm = ChatOpenAI(
-    model = os.environ["OPENAI_MODEL_NAME"],
-    base_url = os.environ["OPENAI_API_BASE"])
+    model = 'crewai-llama3:8b',
+    base_url = 'http://localhost:11434/v1')
 
 @CrewBase
 class TripCrew:
