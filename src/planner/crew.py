@@ -1,8 +1,8 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
-from tools.browser_tools import BrowserTools
-from tools.calculator_tools import CalculatorTools
-from tools.search_tools import SearchTools
+from planner.tools.browser_tools import BrowserTools
+from planner.tools.calculator_tools import CalculatorTools
+from planner.tools.search_tools import SearchTools
 
 from langchain_openai import ChatOpenAI
 import os
@@ -22,29 +22,27 @@ class TripCrew:
   @agent
   def city_selector_agent(self) -> Agent:
     return Agent(
-      config=self.agents_config["city_selector_agent"],
+      config=self.agents_config["city_selection_agent"],
       tools=[
         SearchTools.search_internet,
         BrowserTools.scrape_and_summarize_website,
       ],
-      verbose=True,
       llm = llm
     )
   
   @agent
-  def local_expert_agent(self) -> Agent:
+  def local_expert(self) -> Agent:
     return Agent(
       config=self.agents_config["local_expert"],
       tools=[
         SearchTools.search_internet,
         BrowserTools.scrape_and_summarize_website,
       ],
-      verbose=True,
       llm = llm
     )
   
   @agent
-  def travel_concierge_agent(self) -> Agent:
+  def travel_concierge(self) -> Agent:
     return Agent(
       config=self.agents_config["travel_concierge"],
       tools=[
@@ -52,7 +50,6 @@ class TripCrew:
         BrowserTools.scrape_and_summarize_website,
         CalculatorTools.calculate,
       ],
-      verbose=True,
       llm = llm
     )
   
@@ -67,14 +64,14 @@ class TripCrew:
   def gather_task(self) -> Task:
     return Task(
       config=self.tasks_config["gather_info"],
-      agent=self.local_expert_agent(),
+      agent=self.local_expert(),
     )
   
   @task
   def trip_planning_task(self) -> Task:
     return Task(
       config=self.tasks_config["trip_planning"],
-      agent=self.travel_concierge_agent(),
+      agent=self.travel_concierge(),
     )
   
   @crew

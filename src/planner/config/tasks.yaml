@@ -10,7 +10,7 @@ identify:
 
     Traveling from: {origin}
     City Options: {cities}
-    Trip Date: {range}
+    Trip Date: {date_range}
     Traveler Interests: {interests}    
 
   expected_output: >
@@ -34,7 +34,7 @@ gather_info:
     hotspots, must-visit landmarks, weather forecasts, and
     high level costs.
 
-    Trip Date: {range}
+    Trip Date: {date_range}
     Traveling from: {origin}
     Traveler Interests: {interests}    
 
@@ -58,7 +58,7 @@ trip_planning:
     from arrival to departure, integrating the city guide
     information with practical travel logistics.
 
-    Trip Date: {range}
+    Trip Date: {date_range}
     Traveling from: {origin}
     Traveler Interests: {interests}    
 

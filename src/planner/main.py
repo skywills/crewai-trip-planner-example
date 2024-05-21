@@ -1,11 +1,11 @@
 #!/usr/bin/env python
-from crew import TripCrew
+from planner.crew import TripCrew
 from textwrap import dedent
 
 def run():
     # Replace with your inputs, it will automatically interpolate any tasks and agents information
     inputs = {
-        'location': input(
+        'origin': input(
             dedent("""
               From where will you be traveling from?
             """)),
