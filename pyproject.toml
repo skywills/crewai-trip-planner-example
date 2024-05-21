@@ -1,10 +1,9 @@
 [tool.poetry]
-name = "crewai-test"
+name = "planner"
 version = "0.1.0"
 description = ""
 authors = ["williamkhoo <william_khoo@outlook.com>"]
 readme = "README.md"
-packages = [{include = "crewai_test"}]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<=3.13"
@@ -13,6 +12,8 @@ langchain = "^0.1.20"
 unstructured = "0.10.25"
 duckduckgo-search = "^6.1.0"
 
+[tool.poetry.scripts]
+planner = "planner.main:run"
 
 [build-system]
 requires = ["poetry-core"]

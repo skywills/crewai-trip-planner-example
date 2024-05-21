@@ -6,11 +6,11 @@ from tools.search_tools import SearchTools
 
 from langchain_openai import ChatOpenAI
 import os
-os.environ["OPENAI_API_KEY"] = "NA"
+#os.environ["OPENAI_API_KEY"] = "NA"
 
 llm = ChatOpenAI(
-    model = 'crewai-llama3:8b',
-    base_url = 'http://localhost:11434/v1')
+    model = os.environ["OPENAI_MODEL_NAME"],
+    base_url = os.environ["OPENAI_API_BASE"])
 
 @CrewBase
 class TripCrew:

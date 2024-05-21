@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 from crew import TripCrew
-import datetime
 from textwrap import dedent
 
 def run():
