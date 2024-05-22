@@ -1683,6 +1683,25 @@ docs = ["Sphinx", "furo"]
 test = ["objgraph", "psutil"]
 
 [[package]]
+name = "groq"
+version = "0.7.0"
+description = "The official Python library for the groq API"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "groq-0.7.0-py3-none-any.whl", hash = "sha256:891d530e1b4686e7a113f84084459905e13d37337e6b9376b73e55a293f18fe5"},
+    {file = "groq-0.7.0.tar.gz", hash = "sha256:7ac2d58516a312cfdfcbeefb3ed90b24b5d42ac3f6d29210e6e92b83b27d4578"},
+]
+
+[package.dependencies]
+anyio = ">=3.5.0,<5"
+distro = ">=1.7.0,<2"
+httpx = ">=0.23.0,<1"
+pydantic = ">=1.9.0,<3"
+sniffio = "*"
+typing-extensions = ">=4.7,<5"
+
+[[package]]
 name = "grpc-google-iam-v1"
 version = "0.13.0"
 description = "IAM API client library"
@@ -2182,6 +2201,21 @@ tenacity = ">=8.1.0,<9.0.0"
 
 [package.extras]
 extended-testing = ["jinja2 (>=3,<4)"]
+
+[[package]]
+name = "langchain-groq"
+version = "0.1.4"
+description = "An integration package connecting Groq and LangChain"
+optional = false
+python-versions = "<4.0,>=3.8.1"
+files = [
+    {file = "langchain_groq-0.1.4-py3-none-any.whl", hash = "sha256:83fa9252eb841dc29e7c0b77c5374fa26383b909c2e87eb54824ff0f9529f173"},
+    {file = "langchain_groq-0.1.4.tar.gz", hash = "sha256:eb7e517cfcb245b0b598f93c1e87cc15100e336eb0c1b930c43e7a19dbe131d6"},
+]
+
+[package.dependencies]
+groq = ">=0.4.1,<1"
+langchain-core = ">=0.1.45,<0.3"
 
 [[package]]
 name = "langchain-openai"
@@ -5455,4 +5489,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "jaraco.test", "more
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<=3.13"
-content-hash = "1e686be4d86b35c6a456f49ffa89e5056542ce6b9749575ba5454f55c6a9c7e2"
+content-hash = "0e68fcbb5e7cf8921ef64721e88808e7cb02e6685da99de5a55262ea589bffcf"

@@ -3,14 +3,22 @@ from crewai.project import CrewBase, agent, crew, task
 from planner.tools.browser_tools import BrowserTools
 from planner.tools.calculator_tools import CalculatorTools
 from planner.tools.search_tools import SearchTools
-
 from langchain_openai import ChatOpenAI
+from langchain_groq import ChatGroq
 import os
-#os.environ["OPENAI_API_KEY"] = "NA"
 
-llm = ChatOpenAI(
-    model = os.environ["OPENAI_MODEL_NAME"],
-    base_url = os.environ["OPENAI_API_BASE"])
+
+if "GROQ_API_KEY" not in os.environ or not os.environ["GROQ_API_KEY"]:
+  llm = ChatOpenAI(
+      model=os.environ["OPENAI_MODEL_NAME"],
+      base_url=os.environ["OPENAI_API_BASE"]
+  )
+else:
+  llm = ChatGroq(
+      temperature=0,
+      groq_api_key=os.environ["GROQ_API_KEY"],
+      model_name=os.environ["GROQ_MODEL_NAME"]
+  )
 
 @CrewBase
 class TripCrew:
